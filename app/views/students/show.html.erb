@@ -5,10 +5,19 @@
 
 <h2>Courses: </h2>
 <ul>
-    <% @student.courses.each do |course| %>
-    <li><%= course.name %></li>
+    <% @student.enrollments.each do |enrollment| %>
+    <li>
+    <%= enrollment.course.name %>
+        <%= button_to 'Drop Course', enrollment_path(enrollment), method: "delete" %>
+    </li>
     <% end %>
+
+    
 </ul>
+    <br>
+    <%= button_to 'Delete Student', student_path(@student), method: "delete" %>
+
+
 
 
 

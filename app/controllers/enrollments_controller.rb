@@ -8,6 +8,14 @@ class EnrollmentsController < ApplicationController
         @enrollment = Enrollment.create(enrollment_params)
     
         redirect_to student_path(enrollment_params[:student_id])
+    end
+
+    def destroy
+        @enrollment = Enrollment.find(params[:id])
+    
+        @enrollment.destroy
+    
+        redirect_to student_path(@enrollment.student)
       end
 
       private 

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # get "/students", to: "students#index", as: "students" #index
-  resources :students, only: [:index, :new, :create, :show]
-  resources :enrollments, only: [:index, :new, :create]
+  resources :students, only: [:index, :new, :create, :show, :destroy]
+  resources :courses, only: [:index]
+  resources :enrollments, only: [:index, :new, :create, :destroy]
 
 end
