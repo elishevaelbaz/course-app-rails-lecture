@@ -1,0 +1,7 @@
+<h1>Enrollment Form</h1>
+
+<%= form_for @enrollment do |f|%>
+    Student: <%= collection_select(:enrollment, :student_id, Student.all, :id, :name) %><br />
+    Course: <%= collection_select(:enrollment, :course_id, Course.all, :id, :name) %><br />
+  <%= f.submit %>
+<% end %>
